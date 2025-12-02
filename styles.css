@@ -1,0 +1,92 @@
+body{
+    padding: 3rem 1.5rem;
+    background-color: aliceblue;
+    font-family: 'Barlow Semi Condensed';
+    color: white;
+}
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-content: center;
+    justify-content: center;
+
+}
+
+.card{
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: auto;
+    border-radius: .5rem;
+    padding: 2rem 2rem;
+    box-shadow: 1rem 1rem 1rem rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s ease;
+}
+.card:hover{
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+.autor-info{
+    display: flex;
+    align-items: center;
+}
+img{
+    border-radius: 50%;
+
+}
+.autor-detail{
+    display: flex;
+    flex-direction: column;
+    opacity: 0.95;
+}
+.autor-detail h3{
+    margin-bottom: -1rem;
+    margin-left: 1.5rem;
+    font-weight: 300;
+
+}
+.autor-detail h5{
+    margin-left: 1.5rem;
+    font-weight: 300;
+
+}
+.description{
+    opacity: 0.8;
+}
+@media(min-width:768px){
+    .card-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: "daniel daniel"
+                    "jonathan jeanette"
+                    "patrick patrick"
+                    "kira kira";
+    }
+}
+@media(min-width:1024px){
+    .card#daniel {
+        background-image: url(./images/bg-pattern-quotation.svg);
+        background-repeat: no-repeat;
+        position: relative;
+        background-size: 25% auto;
+        background-position: center right ;
+        background-position: top 10px right 100px;
+    }
+    .card-container{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-areas: "daniel jonathan"
+                    "patrick jeanette"
+                    "kira kira";
+    }
+}
+
+@media(min-width:1440px){
+    .card-container{
+        grid-auto-rows: 1fr;
+        grid-auto-columns: 1fr;
+        grid-template-areas: "daniel daniel  jonathan kira"
+                             "jeanette patrick patrick kira" ;
+    }
+    
+}
